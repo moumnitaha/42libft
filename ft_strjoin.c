@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 19:46:17 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/19 20:02:19 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/20 00:58:08 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ char *ft_strjoin(char const *s1, char const *s2){
     return(str);
 }
 
-int main(){
-    const char *s1 = "Taha";
-    const char *s2 = " Moumni";
-    char *me;
-    me = ft_strjoin(s1, s2);
-    printf("%s\n", me);
-    return(0);
-}
+// int main(){
+//     const char *s1 = "Taha";
+//     const char *s2 = " Moumni";
+//     char *me;
+//     me = ft_strjoin(s1, s2);
+//     printf("%s\n", me);
+//     return(0);
+// }
