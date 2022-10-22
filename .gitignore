@@ -1,4 +1,4 @@
-./a.out
-./*.pdf
-./.vscode
-./main.c
+a.out
+*.pdf
+.vscode
+main.c
