@@ -1,0 +1,12 @@
+{
+  // The number of spaces a tab is equal to.
+  "editor.tabSize": 4,
+
+  // Insert spaces when pressing Tab.
+  "editor.insertSpaces": false,
+
+  "editor.detectIndentation": true,
+  "files.associations": {
+    "unistd.h": "c"
+  }
+}
