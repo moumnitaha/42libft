@@ -6,41 +6,23 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:52:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/22 10:37:28 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/22 12:39:48 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*get_num(char *nbr, int n, int div, int count)
 {
-	char		*nbr;
-	size_t		count;
-	size_t		index;
-	size_t		div;
-	size_t		sign;
+	int			index;
 
-	div = 1;
-	count = 1;
 	index = 0;
 	if (n < 0)
 	{
-		sign = -1;
-		n *= sign;
-		count++;
-	}
-	while (n / div >= 10)
-	{
-		div *= 10;
-		count++;
-	}
-	nbr = (char *)malloc((count + 1) * sizeof(char));
-	if (!nbr)
-		return (NULL);
-	if (sign == -1)
-	{
-		nbr[index] = '-';
+		nbr[0] = '-';
+		n *= -1;
 		index++;
+		count++;
 	}
 	while (index < count)
 	{
@@ -50,5 +32,25 @@ char	*ft_itoa(int n)
 		index++;
 	}
 	nbr[index] = '\0';
+	return (nbr);
+}
+
+char	*ft_itoa(int n)
+{
+	char		*nbr;
+	int			count;
+	int			div;
+
+	div = 1;
+	count = 1;
+	while ((n / div >= 10) || (n / div <= -10))
+	{
+		div *= 10;
+		count++;
+	}
+	nbr = (char *)malloc((count + 2) * sizeof(char));
+	if (!nbr)
+		return (NULL);
+	nbr = get_num(nbr, n, div, count);
 	return (nbr);
 }

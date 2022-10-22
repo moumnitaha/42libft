@@ -6,24 +6,20 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:40:11 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/08 15:00:40 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/22 12:50:20 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int     ft_isalnum(int c){
-    int     true = 1024;
-    int     false = 0;
-    unsigned char d = c;
+int	ft_isalnum(int c)
+{
+	unsigned char	d;
 
-    return ((d >= 48 && d <= 57) || (d >= 97 && d <= 122) || (d >= 65 && d <= 90)) ? true : false;
-}
-
-int     main(){
-    printf("%d\n", ft_isalnum('7'));
-    printf("%d\n", ft_isalnum('K'));
-    printf("%d\n", ft_isalnum('@'));
-    printf("%d\n", ft_isalnum('\''));
-    return 0;
+	d = c;
+	if ((d >= 48 && d <= 57) || (d >= 65 && d <= 90) || (d >= 97 && d <= 122))
+	{
+		return (1);
+	}
+	return (0);
 }

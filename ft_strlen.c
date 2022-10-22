@@ -6,23 +6,27 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:19:46 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/09 17:28:12 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/22 14:20:01 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-size_t     ft_strlen(char *str){
-    size_t     length;
+size_t	ft_strlen(char *str)
+{
+	size_t	length;
 
-    if(str == NULL){
-        return(0);
-    } else {
-        length = 0;
-        while(str[length] != '\0'){
-            length++;
-        }
-    }
-
-    return length;
+	if (str == NULL)
+	{
+		return (0);
+	}
+	else
+	{
+		length = 0;
+		while (str[length] != '\0')
+		{
+			length++;
+		}
+	}
+	return (length);
 }
