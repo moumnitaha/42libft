@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:46:43 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/22 15:07:33 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/22 15:36:42 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_itoa(int n);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-
+char	**ft_split(char const *s, char c);
 #endif
