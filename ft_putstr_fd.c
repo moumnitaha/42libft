@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 12:09:30 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/23 14:17:01 by tmoumni          ###   ########.fr       */
+/*   Created: 2022/10/23 13:17:53 by tmoumni           #+#    #+#             */
+/*   Updated: 2022/10/23 14:17:05 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, &c, 1);
+	size_t	index;
+
+	index = 0;
+	while (s[index])
+	{
+		ft_putchar_fd(s[index], fd);
+		index++;
+	}
 }
