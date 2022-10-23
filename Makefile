@@ -6,7 +6,7 @@
 #    By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/23 15:52:28 by tmoumni           #+#    #+#              #
-#    Updated: 2022/10/23 19:19:06 by tmoumni          ###   ########.fr        #
+#    Updated: 2022/10/23 19:32:02 by tmoumni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,10 @@ ${NAME}: ${OBJS}
 	@ar rcs ${NAME} ${OBJS}
 
 clean:
-	@rm ${OBJS}
+	@rm -f ${OBJS}
 
 fclean:
-	@rm ${NAME}
+	@rm -f ${NAME}
 
 re:
 	@fclean all
