@@ -6,7 +6,7 @@
 #    By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/23 15:52:28 by tmoumni           #+#    #+#              #
-#    Updated: 2022/10/23 19:02:27 by tmoumni          ###   ########.fr        #
+#    Updated: 2022/10/23 19:19:06 by tmoumni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c f
 OBJS = $(SRCS:.c=.o)
 
 all: ${NAME}
-	@echo "Compling...."
+	@echo "Compled successfully...."
 
 ${NAME}: ${OBJS}
 	@ar rcs ${NAME} ${OBJS}
