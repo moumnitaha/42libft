@@ -6,18 +6,24 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:46:43 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/23 15:20:41 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/23 16:26:35 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<stdlib.h>
-#include	<stdio.h>
-#include	<string.h>
-#include	<unistd.h>
-#include	<ctype.h>
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#ifndef	LIBFT_H
-#define LIBFT_H
+# include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
+# include <unistd.h>
+# include <ctype.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t length);
