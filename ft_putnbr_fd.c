@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 15:20:03 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/23 15:23:27 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/23 16:02:49 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,18 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	write(fd, &n, 1);
-}
-
-int main(){
-	ft_putnbr_fd(5, 1);
-	printf("\n");
-	return(0);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n *= -1;
+	}
+	if (n < 10)
+	{
+		ft_putchar_fd(n + '0', fd);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd((n % 10) + '0', fd);
+	}
 }
