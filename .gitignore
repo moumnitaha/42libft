@@ -2,3 +2,4 @@ a.out
 *.pdf
 .vscode
 main.c
+*.s
