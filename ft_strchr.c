@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:03:35 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/22 14:04:07 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/24 11:33:39 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,19 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	while (*str)
+	size_t	count;
+	size_t	strlen;
+
+	count = 0;
+	strlen = ft_strlen((char *)str);
+	while (count <= strlen)
 	{
 		if (*(char *)str == (unsigned char)c)
 		{
 			return ((char *)str);
 		}
 		str++;
+		count++;
 	}
 	return (NULL);
 }

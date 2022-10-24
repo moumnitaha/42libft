@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 10:24:41 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/22 13:16:28 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/24 18:39:31 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,15 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char		*ndst;
-	const char	*nsrc;
-	size_t		count;
-	size_t		srclen;
+	size_t	count;
+	char	*str;
 
-	ndst = (char *)dst;
-	nsrc = (char *)src;
-	srclen = ft_strlen((char *)src);
 	count = 0;
-	if (len)
+	str = ft_strdup((const char *)src);
+	while (count < len)
 	{
-		while (count < len && ndst[count])
-		{
-			ndst[count] = ((char *)nsrc)[count];
-			count++;
-		}
+		((char *)dst)[count] = str[count];
+		count++;
 	}
 	return ((void *)dst);
 }
