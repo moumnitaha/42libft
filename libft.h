@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:46:43 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/23 17:11:40 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/25 15:14:08 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <ctype.h>
+# include <limits.h>
 
 typedef struct s_list
 {

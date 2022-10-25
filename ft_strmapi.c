@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 10:57:13 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/23 11:26:08 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/25 17:02:24 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		str[count] = f(count, s[count]);
 		count++;
 	}
+	str[count] = '\0';
 	return (str);
 }

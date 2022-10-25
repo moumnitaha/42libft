@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:02:53 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/22 14:40:00 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/25 19:20:05 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ size_t	trim_start(char const *s1, char const *set)
 	size_t	index;
 
 	index = 0;
-	while (ft_memchr(set, s1[index], ft_strlen((char *)set)) && s1[index])
-	{
+	while (ft_strchr(set, s1[index]) && s1[index])
 		index++;
-	}
 	return (index);
 }
 
@@ -28,11 +26,11 @@ size_t	trim_end(char const *s1, char const *set)
 {
 	size_t	index;
 
+	if (!ft_strlen((char *)s1))
+		return (0);
 	index = ft_strlen((char *)s1) - 1;
-	while (ft_memchr(set, s1[index], ft_strlen((char *)set)) && s1[index])
-	{
+	while (ft_strchr(set, s1[index]) && index)
 		index--;
-	}
 	return (index);
 }
 
@@ -48,9 +46,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = trim_start(s1, set);
 	end = trim_end(s1, set);
 	count = 0;
-	if (start == ft_strlen((char *)s1))
-		return ("");
-	str = (char *)malloc(((end - start + 1) + 1) * sizeof(char));
+	if (start <= end)
+		str = (char *)malloc(((end - start) + 1) * sizeof(char));
+	else
+		str = (char *)malloc(((start - end) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	while (start <= end)

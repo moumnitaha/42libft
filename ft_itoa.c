@@ -6,15 +6,15 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:52:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/24 10:56:33 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/25 17:24:37 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*get_num(char *nbr, int n, int div, int count)
+static char	*get_num(char *nbr, long int n, int div, int count)
 {
-	int			index;
+	int	index;
 
 	index = 0;
 	if (n < 0)
@@ -40,17 +40,19 @@ char	*ft_itoa(int n)
 	char		*nbr;
 	int			count;
 	int			div;
+	long int	nb;
 
+	nb = (long int)n;
 	div = 1;
 	count = 1;
+	nbr = (char *)malloc((count + 2) * sizeof(char));
+	if (!nbr)
+		return (NULL);
 	while ((n / div >= 10) || (n / div <= -10))
 	{
 		div *= 10;
 		count++;
 	}
-	nbr = (char *)malloc((count + 2) * sizeof(char));
-	if (!nbr)
-		return (NULL);
-	nbr = get_num(nbr, n, div, count);
+	nbr = get_num(nbr, nb, div, count);
 	return (nbr);
 }

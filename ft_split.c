@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:20:26 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/22 18:47:58 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/25 18:51:20 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	count_words(char const *s, char c)
 	count = 1;
 	while (*s)
 	{
-		if (*s == c)
+		if (*(s + 1) && *s == c && *(s + 1) != c)
 			count++;
 		s++;
 	}
@@ -62,14 +62,27 @@ char	**ft_split(char const *s, char c)
 		return (free_mem(array, index));
 	while (index < count_words(s, c))
 	{
-		array[index] = (char *)malloc((word_len(s + i, c) + 1) * sizeof(char));
+		while (s[i] && s[i] == c)
+			i++;
+		array[index] = (char *)malloc((word_len(s + i, c)) * sizeof(char));
 		if (!array[index])
 			return (free_mem(array, index));
 		array[index] = ft_substr(s, i, word_len(s + i, c));
-		i += word_len(s + i, c) + 1;
-		count = 0;
+		while (s[i] && s[i] != c)
+			i++;
 		index++;
 	}
 	array[index] = NULL;
 	return (array);
 }
+
+// int main(){
+// 	char * * tab = ft_split("  tripouille  42  ", ' ');
+// 	int i =0;
+// 	int j =0;
+// 	while(tab[i])
+// 	{
+// 		printf("%s\n", tab[i]);
+// 		i++;
+// 	}
+// }
