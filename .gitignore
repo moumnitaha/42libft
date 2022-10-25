@@ -1,5 +1,8 @@
 a.out
 *.pdf
+*.out
+*.a
+*.o
 .vscode
 main.c
 *.sh
