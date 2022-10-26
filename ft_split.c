@@ -6,27 +6,29 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:20:26 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/25 18:51:20 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/26 13:09:01 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	size_t	count;
 
-	count = 1;
+	count = 0;
 	while (*s)
 	{
-		if (*(s + 1) && *s == c && *(s + 1) != c)
+		while (*s && *s == c && *(s + 1))
+			s++;
+		if (*s != c && (*(s + 1) == c || *(s + 1) == '\0'))
 			count++;
 		s++;
 	}
 	return (count);
 }
 
-size_t	word_len(char const *s, int c)
+static size_t	word_len(char const *s, int c)
 {
 	size_t	count;
 
@@ -36,12 +38,15 @@ size_t	word_len(char const *s, int c)
 	return (count);
 }
 
-void	*free_mem(char **array, size_t j)
+static void	*free_mem(char **array)
 {
-	while (array[j - 1])
+	size_t	j;
+
+	j = 0;
+	while (array[j])
 	{
-		free(array[j - 1]);
-		j--;
+		free(array[j]);
+		j++;
 	}
 	free(array);
 	return (NULL);
@@ -54,35 +59,24 @@ char	**ft_split(char const *s, char c)
 	size_t	index;
 	size_t	i;
 
-	count = 0;
 	index = 0;
 	i = 0;
 	array = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!array)
-		return (free_mem(array, index));
+		return (free_mem(array));
 	while (index < count_words(s, c))
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		array[index] = (char *)malloc((word_len(s + i, c)) * sizeof(char));
+		array[index] = (char *)malloc((word_len(s + i, c) + 1) * sizeof(char));
 		if (!array[index])
-			return (free_mem(array, index));
-		array[index] = ft_substr(s, i, word_len(s + i, c));
+			return (free_mem(array));
+		count = 0;
 		while (s[i] && s[i] != c)
-			i++;
+			array[index][count++] = *(s + i++);
+		array[index][count] = '\0';
 		index++;
 	}
 	array[index] = NULL;
 	return (array);
 }
-
-// int main(){
-// 	char * * tab = ft_split("  tripouille  42  ", ' ');
-// 	int i =0;
-// 	int j =0;
-// 	while(tab[i])
-// 	{
-// 		printf("%s\n", tab[i]);
-// 		i++;
-// 	}
-// }

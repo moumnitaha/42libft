@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:52:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/25 17:24:37 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/26 11:54:57 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,22 @@ static char	*get_num(char *nbr, long int n, int div, int count)
 
 char	*ft_itoa(int n)
 {
-	char		*nbr;
-	int			count;
-	int			div;
-	long int	nb;
+	char			*nbr;
+	int				count;
+	int				div;
+	long long int	nb;
 
-	nb = (long int)n;
-	div = 1;
 	count = 1;
-	nbr = (char *)malloc((count + 2) * sizeof(char));
-	if (!nbr)
-		return (NULL);
-	while ((n / div >= 10) || (n / div <= -10))
+	div = 1;
+	nb = (long long int)n;
+	while ((nb / div >= 10) || (nb / div <= -10))
 	{
 		div *= 10;
 		count++;
 	}
+	nbr = (char *)malloc((count + 1) * sizeof(char));
+	if (!nbr)
+		return (NULL);
 	nbr = get_num(nbr, nb, div, count);
 	return (nbr);
 }
