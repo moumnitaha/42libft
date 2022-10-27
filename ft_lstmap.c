@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 19:32:02 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/27 18:05:25 by tmoumni          ###   ########.fr       */
+/*   Created: 2022/10/27 18:16:42 by tmoumni           #+#    #+#             */
+/*   Updated: 2022/10/27 19:10:18 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*str;
-	size_t	count;
-	size_t	slen;
+	t_list	*maped_list;
+	t_list	*tmp;
 
-	count = 0;
-	slen = ft_strlen((char *)s);
-	if (start <= slen)
-		str = (char *)malloc(sizeof(char) * (len + 1));
-	else
-		str = (char *)malloc(sizeof(char));
-	if (!str)
+	tmp = lst;
+	maped_list = malloc(ft_lstsize(lst) * sizeof(t_list) + 1);
+	if (!maped_list)
 		return (NULL);
-	while (s[count + start] && start < slen && count < len)
+	while (tmp)
 	{
-		str[count] = s[start + count];
-		count++;
+		if (tmp->content)
+			f(tmp->content);
+		else
+		{
+			del(tmp->content);
+			free(tmp->content);
+		}
+		tmp = tmp->next;
 	}
-	str[count] = '\0';
-	return (str);
+	maped_list = lst;
+	return (maped_list);
 }

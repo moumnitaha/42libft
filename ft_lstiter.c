@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 19:32:02 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/27 18:05:25 by tmoumni          ###   ########.fr       */
+/*   Created: 2022/10/27 18:09:53 by tmoumni           #+#    #+#             */
+/*   Updated: 2022/10/27 18:15:56 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char	*str;
-	size_t	count;
-	size_t	slen;
+	t_list	*tmp;
 
-	count = 0;
-	slen = ft_strlen((char *)s);
-	if (start <= slen)
-		str = (char *)malloc(sizeof(char) * (len + 1));
-	else
-		str = (char *)malloc(sizeof(char));
-	if (!str)
-		return (NULL);
-	while (s[count + start] && start < slen && count < len)
+	tmp = lst;
+	while (tmp)
 	{
-		str[count] = s[start + count];
-		count++;
+		f(tmp->content);
+		tmp = tmp->next;
 	}
-	str[count] = '\0';
-	return (str);
 }

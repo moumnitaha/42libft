@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:08:35 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/26 18:22:44 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/27 18:08:47 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (lst->content)
-		del(lst->content);
+	t_list	*tmp;
+
+	tmp = lst->next;
+	del(lst->content);
+	free(lst);
 }
