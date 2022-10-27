@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:02:53 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/25 19:20:05 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/27 19:33:03 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = trim_end(s1, set);
 	count = 0;
 	if (start <= end)
-		str = (char *)malloc(((end - start) + 1) * sizeof(char));
+		str = (char *)malloc(((end - start) + 2) * sizeof(char));
 	else
-		str = (char *)malloc(((start - end) + 1) * sizeof(char));
+		str = (char *)malloc(sizeof(char));
 	if (!str)
 		return (NULL);
 	while (start <= end)
