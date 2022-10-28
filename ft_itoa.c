@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:52:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/26 11:54:57 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/28 17:47:23 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ static char	*get_num(char *nbr, long int n, int div, int count)
 
 char	*ft_itoa(int n)
 {
-	char			*nbr;
-	int				count;
-	int				div;
-	long long int	nb;
+	char		*nbr;
+	int			count;
+	int			div;
+	long int	nb;
 
 	count = 1;
 	div = 1;
-	nb = (long long int)n;
+	nb = (long int)n;
 	while ((nb / div >= 10) || (nb / div <= -10))
 	{
 		div *= 10;

@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:20:26 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/26 13:09:01 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/28 18:29:55 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static size_t	count_words(char const *s, char c)
 	count = 0;
 	while (*s)
 	{
-		while (*s && *s == c && *(s + 1))
+		while (*s == c && *(s + 1))
 			s++;
 		if (*s != c && (*(s + 1) == c || *(s + 1) == '\0'))
 			count++;

@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:26:40 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/22 13:17:20 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/28 13:16:05 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	*ft_memset(void *s, int c, size_t length)
 			count++;
 		}
 	}
-	return (s);
+	return ((void *)s);
 }
