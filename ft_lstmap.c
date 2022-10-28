@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 18:16:42 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/27 19:10:18 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/28 18:41:47 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		else
 		{
 			del(tmp->content);
-			free(tmp->content);
+			free(tmp);
 		}
 		tmp = tmp->next;
 	}
