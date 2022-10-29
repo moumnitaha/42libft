@@ -6,13 +6,13 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:52:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/28 17:47:23 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/29 18:32:05 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*get_num(char *nbr, long int n, int div, int count)
+static char	*get_num(char *nbr, long long n, int div, int count)
 {
 	int	index;
 
@@ -40,11 +40,11 @@ char	*ft_itoa(int n)
 	char		*nbr;
 	int			count;
 	int			div;
-	long int	nb;
+	long long	nb;
 
 	count = 1;
 	div = 1;
-	nb = (long int)n;
+	nb = (long long)n;
 	while ((nb / div >= 10) || (nb / div <= -10))
 	{
 		div *= 10;

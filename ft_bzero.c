@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:35:55 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/22 12:42:30 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/29 17:14:37 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,9 @@ void	ft_bzero(void *s, size_t length)
 	size_t	count;
 
 	count = 0;
-	if (length > 0 && (char *)s != NULL)
+	while (count < length)
 	{
-		while (count < length)
-		{
-			((char *)s)[count] = '\0';
-			count++;
-		}
+		((char *)s)[count] = '\0';
+		count++;
 	}
 }

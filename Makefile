@@ -6,7 +6,7 @@
 #    By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/23 15:52:28 by tmoumni           #+#    #+#              #
-#    Updated: 2022/10/27 18:16:25 by tmoumni          ###   ########.fr        #
+#    Updated: 2022/10/29 18:08:42 by tmoumni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,11 +32,11 @@ all: $(NAME)
 	@$(CC) -c $< $(CFLAGS) -o $@
 	@echo "Compiling:" $< "..."
 
-$(NAME): $(OBJS) $(B_OBJS)
+$(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 	@echo "Compiled successfully...."
 
-bonus: $(B_SRCS) $(B_OBJS)
+bonus: $(B_OBJS)
 	@ar rcs $(NAME) $(B_OBJS)
 	@echo "Bonus linked successfully...."
 
@@ -44,6 +44,6 @@ clean:
 	@rm -f $(OBJS) $(B_OBJS)
 
 fclean:
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(OBJS) $(B_OBJS)
 
 re: fclean all

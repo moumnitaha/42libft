@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 18:16:42 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/28 18:41:47 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/29 19:01:17 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,21 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*maped_list;
-	t_list	*tmp;
+	t_list	*new_node;
 
-	tmp = lst;
-	maped_list = malloc(ft_lstsize(lst) * sizeof(t_list) + 1);
+	maped_list = malloc((ft_lstsize(lst) + 1) * sizeof(t_list));
 	if (!maped_list)
 		return (NULL);
-	while (tmp)
+	while (lst)
 	{
-		if (tmp->content)
-			f(tmp->content);
-		else
+		new_node = ft_lstnew(f(lst->content));
+		if (!new_node)
 		{
-			del(tmp->content);
-			free(tmp);
+			ft_lstclear(&maped_list, del);
+			return (0);
 		}
-		tmp = tmp->next;
+		ft_lstadd_front(&maped_list, new_node);
+		lst = lst->next;
 	}
-	maped_list = lst;
 	return (maped_list);
 }
