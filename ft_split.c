@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:20:26 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/30 18:03:47 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/30 19:00:47 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	array = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!array)
-		return (free_mem(array));
+		return (0);
 	while (index < count_words(s, c))
 	{
 		while (s[i] && s[i] == c)
