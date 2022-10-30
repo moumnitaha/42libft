@@ -6,13 +6,13 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:52:54 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/29 18:32:05 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/30 15:19:09 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*get_num(char *nbr, long long n, int div, int count)
+static char	*getnum(char *nbr, long long n, int div, int count)
 {
 	int	index;
 
@@ -50,9 +50,12 @@ char	*ft_itoa(int n)
 		div *= 10;
 		count++;
 	}
-	nbr = (char *)malloc((count + 1) * sizeof(char));
+	if (n < 0)
+		nbr = (char *)malloc((count + 2) * sizeof(char));
+	else
+		nbr = (char *)malloc((count + 1) * sizeof(char));
 	if (!nbr)
 		return (NULL);
-	nbr = get_num(nbr, nb, div, count);
+	nbr = getnum(nbr, nb, div, count);
 	return (nbr);
 }

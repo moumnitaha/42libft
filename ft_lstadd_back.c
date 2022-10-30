@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:00:52 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/26 16:26:04 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/10/30 13:21:02 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*head;
+	t_list	*back;
 
-	head = *lst;
+	back = *lst;
 	if (*lst == NULL)
 		*lst = new;
 	else
 	{
-		while (head->next != NULL)
-			head = head->next;
-		head->next = new;
+		while (back->next != NULL)
+			back = back->next;
+		back->next = new;
 	}
 }
