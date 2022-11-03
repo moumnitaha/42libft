@@ -6,5 +6,6 @@ a.out
 .vscode
 main.c
 *.sh
+*.so
 libftTester
 Libftest
