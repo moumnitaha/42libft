@@ -40,6 +40,10 @@ bonus: $(B_OBJS)
 	@ar rcs $(NAME) $(B_OBJS)
 	@echo "Bonus linked successfully...."
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(B_OBJS)
+
 clean:
 	@rm -f $(OBJS) $(B_OBJS)
 
