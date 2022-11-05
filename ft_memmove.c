@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 10:24:41 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/29 18:43:14 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/05 17:05:30 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (len)
-		{
-			ndst[len - 1] = nsrc[len - 1];
-			len--;
-		}
+		while (len--)
+			ndst[len] = nsrc[len];
 	}
 	return ((void *)dst);
 }
