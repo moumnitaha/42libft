@@ -6,13 +6,13 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:02:53 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/27 19:33:03 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/05 18:41:07 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	trim_start(char const *s1, char const *set)
+static size_t	trim_start(char const *s1, char const *set)
 {
 	size_t	index;
 
@@ -22,7 +22,7 @@ size_t	trim_start(char const *s1, char const *set)
 	return (index);
 }
 
-size_t	trim_end(char const *s1, char const *set)
+static size_t	trim_end(char const *s1, char const *set)
 {
 	size_t	index;
 
