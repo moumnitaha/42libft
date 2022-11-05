@@ -6,7 +6,7 @@
 #    By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/23 15:52:28 by tmoumni           #+#    #+#              #
-#    Updated: 2022/10/29 18:08:42 by tmoumni          ###   ########.fr        #
+#    Updated: 2022/11/05 18:51:00 by tmoumni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,10 +39,6 @@ $(NAME): $(OBJS)
 bonus: $(B_OBJS)
 	@ar rcs $(NAME) $(B_OBJS)
 	@echo "Bonus linked successfully...."
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(B_OBJS)
 
 clean:
 	@rm -f $(OBJS) $(B_OBJS)
