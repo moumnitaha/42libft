@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:36:38 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/30 10:56:39 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/06 13:59:54 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	t_list	*tmp;
+
 	if (!lst || !del)
 		return ((void) NULL);
 	while (*lst)
 	{
-		ft_lstdelone(*lst, del);
+		tmp = *lst;
 		*lst = (*lst)->next;
+		ft_lstdelone(tmp, del);
 	}
 	*lst = NULL;
 }

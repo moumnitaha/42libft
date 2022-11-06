@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:24:26 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/23 14:25:20 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/06 15:03:35 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_tolower(int c)
 {
 	unsigned char	n;
 
+	if (c == EOF)
+		return (-1);
 	n = c;
 	if (n >= 65 && n <= 90)
 		n = n + 32;

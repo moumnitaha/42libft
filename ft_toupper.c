@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:10:28 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/22 14:43:50 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/06 15:02:00 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_toupper(int c)
 {
 	unsigned char	n;
 
+	if (c == EOF)
+		return (-1);
 	n = c;
 	if (n >= 97 && n <= 122)
 		n = n - 32;
