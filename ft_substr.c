@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 19:32:02 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/06 10:31:22 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/06 17:05:44 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[count] = '\0';
 	return (str);
 }
+
+	// if (start <= slen){
+	// 	if (len <= slen - start)
+	// 		str = (char *)malloc((len + 1) * sizeof(char));
+	// 	else
+	// 		str = (char *)malloc((slen - start + 1) * sizeof(char));
+	// }
+	// else
+	// 	str = (char *)malloc((1) * sizeof(char));
