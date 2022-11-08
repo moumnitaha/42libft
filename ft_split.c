@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:20:26 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/05 17:31:09 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/08 21:39:31 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,30 +52,38 @@ static void	*free_mem(char **array)
 	return (NULL);
 }
 
+char	*skip_delimiter(char const *s, char c)
+{
+	while (*s && *s == c)
+			s++;
+	return ((char *)s);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
 	size_t	index;
 	size_t	count;
-	size_t	i;
+	size_t	words;
 
-	index = 0;
-	i = 0;
+	if (!s)
+		return (NULL);
+	index = -1;
+	words = count_words(s, c);
 	array = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
-	while (index++ < count_words(s, c))
+	while (++index < words)
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		array[index - 1] = (char *)malloc((word_len(s + i, c) + 1));
-		if (!array[index - 1])
+		s = skip_delimiter(s, c);
+		array[index] = (char *)malloc((word_len(s, c) + 1) * sizeof(char));
+		if (!array[index])
 			return (free_mem(array));
 		count = 0;
-		while (s[i] && s[i] != c)
-			array[index - 1][count++] = s[i++];
-		array[index - 1][count] = '\0';
+		while (*s && *s != c)
+			array[index][count++] = *s++;
+		array[index][count] = '\0';
 	}
-	array[index - 1] = NULL;
+	array[index] = NULL;
 	return (array);
 }
