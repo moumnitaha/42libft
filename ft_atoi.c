@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 15:12:35 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/06 16:04:42 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/08 18:40:21 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 static int	ft_iswhitespace(char c)
 {
-	if (c == '\n' || c == '\t' || c == '\v')
-		return (1);
-	if (c == '\f' || c == '\r' || c == ' ')
+	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
 	return (0);
 }
