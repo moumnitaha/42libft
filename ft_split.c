@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:20:26 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/08 21:39:31 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/08 21:40:23 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	*free_mem(char **array)
 	return (NULL);
 }
 
-char	*skip_delimiter(char const *s, char c)
+static char	*skip_delimiter(char const *s, char c)
 {
 	while (*s && *s == c)
 			s++;
