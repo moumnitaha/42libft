@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 15:12:35 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/08 18:40:21 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/12 10:34:59 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static int	ft_iswhitespace(char c)
 
 int	ft_atoi(const char *str)
 {
-	int			sign;
-	int			count;
-	long long	result;
+	int		sign;
+	int		count;
+	long	result;
 
 	count = 0;
 	sign = 1;
