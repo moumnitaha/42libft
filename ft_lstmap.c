@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 18:16:42 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/06 17:02:30 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/13 11:02:46 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	maped_lst = NULL;
 	if (!lst)
-		return (0);
+		return (NULL);
 	while (lst)
 	{
 		new_node = ft_lstnew(f(lst->content));
 		if (!new_node)
 		{
 			ft_lstclear(&maped_lst, del);
-			return (0);
+			return (NULL);
 		}
 		ft_lstadd_back(&maped_lst, new_node);
 		lst = lst->next;

@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 19:01:49 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/24 16:59:38 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/13 11:05:28 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	*ft_strdup(const char *s)
 	count = 0;
 	ptr = (char *)malloc((ft_strlen((char *)s) + 1) * sizeof(char));
 	if (!ptr)
-	{
 		return (NULL);
-	}
 	while (count < ft_strlen((char *)s))
 	{
 		ptr[count] = s[count];

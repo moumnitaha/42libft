@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 11:23:55 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/10/30 11:25:56 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/13 11:05:40 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	count;
 
 	if (!s || !f)
-		return ((void) NULL);
+		return ;
 	count = 0;
 	while (*s)
 	{
