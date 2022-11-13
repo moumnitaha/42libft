@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:41:04 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/12 13:39:31 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/13 18:24:47 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	const char	*nsrc;
 
 	if (dst == src)
-		return (0);
+		return (dst);
 	ndst = (char *)dst;
 	nsrc = (const char *)src;
 	while (n)
