@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 15:12:35 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/17 17:21:54 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/17 17:55:02 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_atoi(const char *str)
 		sign = -1;
 	while (str[index] && ft_isdigit(str[index]))
 		result = result * 10 + (str[index++] - '0');
-	if ((result < 0) || count_digits(str) > 19)
+	if (result < 0 || count_digits(str) > 19)
 	{
 		if (sign == 1)
 			return (-1);
