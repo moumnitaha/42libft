@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 15:12:35 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/12 10:34:59 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/17 17:21:54 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,44 @@ static int	ft_iswhitespace(char c)
 	return (0);
 }
 
+static int	count_digits(const char *str)
+{
+	int	index;
+	int	count;
+
+	index = 0;
+	count = 0;
+	while (!ft_isalnum(str[index]))
+		index++;
+	while (!(str[index] - '0'))
+		index++;
+	while (ft_isdigit(str[index++]))
+		count++;
+	return (count);
+}
+
 int	ft_atoi(const char *str)
 {
 	int		sign;
-	int		count;
+	int		index;
 	long	result;
 
-	count = 0;
+	index = 0;
 	sign = 1;
 	result = 0;
-	while (str[count] && ft_iswhitespace(str[count]))
-		count++;
-	if (str[count] == '+' || str[count] == '-')
-		count++;
-	if (count > 0 && str[count - 1] == '-')
+	while (str[index] && ft_iswhitespace(str[index]))
+		index++;
+	if (str[index] == '+' || str[index] == '-')
+		index++;
+	if (index > 0 && str[index - 1] == '-')
 		sign = -1;
-	while (str[count] && ft_isdigit(str[count]))
+	while (str[index] && ft_isdigit(str[index]))
+		result = result * 10 + (str[index++] - '0');
+	if ((result < 0) || count_digits(str) > 19)
 	{
-		result = result * 10 + (str[count] - '0');
-		if (result < 0 && result != LONG_MIN)
-		{
-			if (sign == -1)
-				return (0);
+		if (sign == 1)
 			return (-1);
-		}
-		count++;
+		return (0);
 	}
 	return (sign * result);
 }
