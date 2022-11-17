@@ -6,13 +6,13 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:02:53 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/06 17:07:40 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/17 18:43:56 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	trim_start(char const *s1, char const *set)
+static size_t	trim_head(char const *s1, char const *set)
 {
 	size_t	index;
 
@@ -22,7 +22,7 @@ static size_t	trim_start(char const *s1, char const *set)
 	return (index);
 }
 
-static size_t	trim_end(char const *s1, char const *set)
+static size_t	trim_tail(char const *s1, char const *set)
 {
 	size_t	index;
 
@@ -43,8 +43,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	start = trim_start(s1, set);
-	end = trim_end(s1, set);
+	start = trim_head(s1, set);
+	end = trim_tail(s1, set);
 	count = 0;
 	if (start <= end)
 		str = (char *)malloc(((end - start) + 2) * sizeof(char));
