@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:10:28 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/12 10:27:13 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/19 14:59:15 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_toupper(int c)
 	if (c == EOF)
 		return (-1);
 	n = (unsigned char)c;
-	if (n >= 97 && n <= 122)
+	if (n >= 'a' && n <= 'z')
 		n = n - 32;
 	return (n);
 }

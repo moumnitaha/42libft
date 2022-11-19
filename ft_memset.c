@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:26:40 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/17 18:09:07 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/19 18:50:04 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	*ft_memset(void *s, int c, size_t length)
 	count = 0;
 	while (count < length)
 		((unsigned char *)s)[count++] = (unsigned char)c;
-	return (s);
+	return ((void *)s);
 }
