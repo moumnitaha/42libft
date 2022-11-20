@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:02:53 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/19 19:17:52 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/20 10:56:47 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = trim_head(s1, set);
 	end = trim_tail(s1, set);
 	count = 0;
-	if (start <= end)
+	if (start <= end && ft_strlen((char *)s1))
 		str = (char *)malloc(((end - start) + 2) * sizeof(char));
 	else
 		str = (char *)malloc(sizeof(char));
 	if (!str)
 		return (NULL);
-	while (start <= end)
+	while (start <= end && ft_strlen((char *)s1))
 	{
 		str[count] = s1[start];
 		start++;
 		count++;
 	}
-	str[count] = 0;
+	str[count] = '\0';
 	return (str);
 }
