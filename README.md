@@ -6,54 +6,116 @@ My first project as a 1337 student.
 Your very first own library.
 <p>This project is about coding a C library.
 It will contain a lot of general purpose functions your programs will rely upon.</p>
-# Mandatory part functions : Part 1.
 
-<table style="text-align: center;">
+# Mandatory part functions : Part 1:
+<p>
+To begin, you must redo a set of functions from the libc. Your functions will have the same prototypes and implement the same behaviors as the originals. They must comply with the way they are defined in their man. The only difference will be their names. They will begin with the ’ft_’ prefix. For instance, strlen becomes ft_strlen.
+</p>
+<table>
   <tr>
-    <td>• isalpha</td>
-    <td>• isdigit</td>
+    <td>• ft_isalpha</td>
+    <td>• ft_isdigit</td>
   </tr>
   <tr>
-    <td>• isalnum</td>
-    <td>• isascii</td>
+    <td>• ft_isalnum</td>
+    <td>• ft_isascii</td>
   </tr>
   <tr>
-    <td>• isprint</td>
-    <td>• strlen</td>
+    <td>• ft_isprint</td>
+    <td>• ft_strlen</td>
   </tr>
   <tr>
-    <td>• memset</td>
-    <td>• bzero</td>
+    <td>• ft_memset</td>
+    <td>• ft_bzero</td>
   </tr>
   <tr>
-    <td>• memcpy</td>
-    <td>• memmove</td>
+    <td>• ft_memcpy</td>
+    <td>• ft_memmove</td>
   </tr>
    <tr>
-    <td>• strlcpy</td>
-    <td>• strlcat</td>
+    <td>• ft_strlcpy</td>
+    <td>• ft_strlcat</td>
   </tr>
    <tr>
-    <td>• toupper</td>
-    <td>• tolower</td>
+    <td>• ft_toupper</td>
+    <td>• ft_tolower</td>
   </tr>
    <tr>
-    <td>• strchr</td>
-    <td>• strrchr</td>
+    <td>• ft_strchr</td>
+    <td>• ft_strrchr</td>
   </tr>
    <tr>
-    <td>• strncmp</td>
-    <td>• memchr</td>
+    <td>• ft_strncmp</td>
+    <td>• ft_memchr</td>
   </tr>
    <tr>
-    <td>• memcmp</td>
-    <td>• strnstr</td>
+    <td>• ft_memcmp</td>
+    <td>• ft_strnstr</td>
   </tr>
   <tr>
-    <td colspan="2">• atoi</td>
+    <td colspan="2">• ft_atoi</td>
   </tr>
   <tr>
-    <td>• calloc</td>
-    <td >• strdup</td>
+    <td>• ft_calloc</td>
+    <td >• ft_strdup</td>
+  </tr>
+</table>
+
+# Mandatory part functions : Part 2:
+<p>
+  In this second part, you must develop a set of functions that are either not in the libc, or that are part of it but in a dfferent form.
+</p>
+<table>
+  <tr>
+    <td>• ft_substr</td>
+    <td>• ft_strjoin</td>
+  </tr>
+  <tr>
+    <td>• ft_strtrim</td>
+    <td>• ft_split</td>
+  </tr>
+  <tr>
+    <td colspan="2">• ft_itoa</td>
+  </tr>
+  <tr>
+    <td>• ft_strmapi</td>
+    <td>• ft_striteri</td>
+  </tr>
+  <tr>
+    <td>• ft_putchar_fd</td>
+    <td>• ft_putstr_fd</td>
+  </tr>
+   <tr>
+    <td>• ft_putendl_fd</td>
+    <td>• ft_putnbr_fd</td>
+  </tr>
+</table>
+
+# Bonus Part:
+<p>
+If you completed the mandatory part, do not hesitate to go further by doing this extra one. It will bring bonus points if passed successfully.
+</p>
+<p>
+Functions to manipulate memory and strings is very useful. But you will soon discover that manipulating lists is even more useful.
+</p>
+<table>
+  <tr>
+    <td  colspan="2">• ft_lstnew</td>
+  </tr>
+  <tr>
+    <td>• ft_lstsize</td>
+    <td>• ft_lstlast</td>
+  </tr>
+  <tr>
+    <td>• ft_lstadd_back</td>
+    <td>• ft_lstadd_front</td>
+  </tr>
+  <tr>
+    <td>• ft_lstdelone</td>
+    <td>• ft_lstclear</td>
+  </tr>
+  <tr>
+    <td>• ft_lstiter</td>
+    <td>• ft_lstmap</td>
   </tr>
 </table>
