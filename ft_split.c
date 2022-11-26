@@ -6,7 +6,7 @@
 /*   By: tmoumni <tmoumni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:20:26 by tmoumni           #+#    #+#             */
-/*   Updated: 2022/11/12 11:04:45 by tmoumni          ###   ########.fr       */
+/*   Updated: 2022/11/26 12:01:39 by tmoumni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,12 @@ char	**ft_split(char const *s, char c)
 	}
 	array[index] = NULL;
 	return (array);
+}
+
+int main ()
+{
+	char *str = "this is\na\nstring for\ntest";
+	char **array = ft_split(str, '\n');
+	while(*array)
+		printf("%s\n", *array++);
 }
